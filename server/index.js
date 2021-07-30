@@ -7,7 +7,13 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+
+//fix CORS error
+const corsOptions={
+ cors: true,
+ origins:["http://localhost:3000"],
+}
+const io = socketio(server, corsOptions);
 
 io.on('connection', (socket) => {
     console.log("We have new connection");
