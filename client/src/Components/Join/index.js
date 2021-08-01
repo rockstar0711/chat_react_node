@@ -5,6 +5,7 @@ import './style.css'
 export default function Join() {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
+    
     return (
         <div className="joinOuterContainer">
             <div className="joinInnercontainer">
